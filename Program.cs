@@ -26,7 +26,7 @@ namespace CrawlerConsultaFeriado
             WebDriverWait waitpage = new WebDriverWait(ie, TimeSpan.FromSeconds(10));
 
         //STOP
-            ie.Navigate().GoToUrl(@"http://intranet.itau/Web1/B3/Portal/");
+            ie.Navigate().GoToUrl(@"**************");
             ie.Manage().Window.Maximize();
 
         //LOGIN B3
