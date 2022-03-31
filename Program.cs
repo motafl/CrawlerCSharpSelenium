@@ -11,6 +11,10 @@ using OpenQA.Selenium.IE;
 using OpenQA.Selenium.Support.UI;
 using OpenQA.Selenium.Interactions;
 
+
+//Exemplo de Crawler em C# com a utilização do Selenium para consulta e extração de dados em sites
+//funcionalidades navega dentro do site, busca info, preenche campos, realiza de/para com csv externo, extrai informações
+
 namespace CrawlerConsultaFeriado
 {
     class Program
@@ -26,7 +30,7 @@ namespace CrawlerConsultaFeriado
             WebDriverWait waitpage = new WebDriverWait(ie, TimeSpan.FromSeconds(10));
 
         //STOP
-            ie.Navigate().GoToUrl(@"**************");
+            ie.Navigate().GoToUrl(@"**************");//url sensível
             ie.Manage().Window.Maximize();
 
         //LOGIN B3
@@ -35,7 +39,7 @@ namespace CrawlerConsultaFeriado
             IWebElement campoFuncional = ie.FindElement(By.Name("username"));
             campoFuncional.SendKeys("987323449");
             IWebElement campoSenha = ie.FindElement(By.Name("password"));
-            campoSenha.SendKeys("161910" + Keys.Enter);
+            campoSenha.SendKeys("******" + Keys.Enter); // dado sensível
         //HOME B3
             wait_ie.Until(ExpectedConditions.VisibilityOfAllElementsLocatedBy((By.Id("frmTotal"))));
             ie.SwitchTo().Frame(ie.FindElement(By.Id("frmTotal")));
